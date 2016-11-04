@@ -1,0 +1,102 @@
+body {
+	text-align: center;
+	font-family: "Microsoft YaHei", Arial, Serif;
+}
+
+h1 { font-weight: normal; }
+
+p { margin: 0; }
+
+body > p { font-size: 15pt; }
+
+
+
+
+
+#info_bar {
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	width: 300px;
+	height: 50px;
+}
+
+#controller {
+	float: left;
+	margin-bottom: 8px;
+	border-radius: 4px;
+	background-color: white;
+	border: 1px solid #d3cfcf;
+	box-shadow: 0 1px 1px #d3cfcf;
+}
+
+#controller:active {
+	background-color: #4485F3;
+}
+
+.output {
+	float: right;
+}
+
+.output p {
+	display: inline;
+}
+
+#time, #score {
+	box-shadow: 0 0 2px #d3cfcf inset;
+	display: inline-block;
+	margin-bottom: 8px;
+	border: 1px solid #d3cfcf;
+	width: 36px;
+	height: 20px;
+}
+
+#condition {
+	box-shadow: 0 0 2px #d3cfcf inset;
+	float: left;
+	border: 1px solid #d3cfcf;
+	width: 133px;
+	height: 21px;
+}
+
+
+
+
+
+#hole_area {
+	width: 250px;
+	height: 155px;
+	margin: 40px auto 0 auto;
+	padding-top: 12px;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.hole {
+	margin: 5px;
+	width: 14px;
+	height: 14px;
+	background-color: white;
+}
+
+
+
+
+
+#instruction {
+	width: 700px;
+	margin: 40px auto 0 auto;
+	text-align: left;
+}
+
+#instruction p:nth-child(1) {
+	font-size: 12pt;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+#instruction p:nth-child(2),#instruction p:nth-child(3) {
+	font-size: 12pt;
+	margin-left: 20px;
+}
