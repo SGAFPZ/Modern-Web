@@ -1,7 +1,6 @@
 //$('head').append($('<script type="text/javascript" src="http://og4s4svgv.bkt.clouddn.com/sorter.js"></script>'));
 
 (function() {
-	$(function() { new Sorter(); });
 
 	var Sorter = function() {
 		this.th = $('th');
@@ -67,5 +66,7 @@
 		return (this.img.attr('src') == '../img/ascend.png' && $(tri[keyIndex]).text() > $(trj[keyIndex]).text()) ||
 				(this.img.attr('src') == '../img/descend.png' && $(tri[keyIndex]).text() < $(trj[keyIndex]).text());
 	}
+	
+	$(function() { new Sorter(); });
 	
 })();
