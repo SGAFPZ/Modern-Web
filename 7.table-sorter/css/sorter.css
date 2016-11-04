@@ -1,6 +1,7 @@
 .borderCollapse { border-collapse: collapse; }
 
 .sharedStyle {
+	margin: 0;
 	padding: 2px 30px 2px 5px;
 	border: 0.01px solid #BFBFBF;
 	font-size: 13pt;
@@ -21,6 +22,8 @@
 }
 
 .even { background-color: #DDDDDD; }
+
+.odd { background-color: white; }
 
 .selected {
 	background-color: #A6AFFC;

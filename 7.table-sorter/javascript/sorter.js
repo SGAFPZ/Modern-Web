@@ -1,7 +1,4 @@
-//$('head').append($('<script type="text/javascript" src="http://og4s4svgv.bkt.clouddn.com/sorter.js"></script>'));
-
 (function() {
-
 	var Sorter = function() {
 		this.th = $('th');
 		this.setStyle();
@@ -11,8 +8,10 @@
 	var sorterP = Sorter.prototype;
 
 	sorterP.setStyle = function() {
+		$('head').append('<link rel="stylesheet" type="text/css" href="http://og4s4svgv.bkt.clouddn.com/sorter1.0.css" />');
 		this.th.addClass('sharedStyle thStyle');
 		$('tr:even').addClass('even');
+		$('tr:odd').addClass('odd');
 		$('table').addClass('borderCollapse');
 		$('td').addClass('sharedStyle tdStyle');
 	};
@@ -28,12 +27,13 @@
 	sorterP.changeStyle = function(th) {
 		if (th.has('#triangle').length === 0) {
 			this.clearSelection();
-			th.addClass('selected').append('<img src = "../img/ascend.png" id = "triangle">');
+			th.addClass('selected').append('<img src = "http://og4s4svgv.bkt.clouddn.com/ascend.png" id = "triangle">');
 			this.img = $('#triangle');
 		} else {
 			this.img = $('#triangle');
-			if (this.img.attr('src') == '../img/ascend.png') this.img.attr('src', '../img/descend.png');
-			else this.img.attr('src', '../img/ascend.png');
+			if (this.img.attr('src') == 'http://og4s4svgv.bkt.clouddn.com/ascend.png')
+				this.img.attr('src', 'http://og4s4svgv.bkt.clouddn.com/descend.png');
+			else this.img.attr('src', 'http://og4s4svgv.bkt.clouddn.com/ascend.png');
 		}
 	};
 
@@ -63,8 +63,8 @@
 	};
 
 	sorterP.shouldChange = function(tri, trj, keyIndex) {
-		return (this.img.attr('src') == '../img/ascend.png' && $(tri[keyIndex]).text() > $(trj[keyIndex]).text()) ||
-				(this.img.attr('src') == '../img/descend.png' && $(tri[keyIndex]).text() < $(trj[keyIndex]).text());
+		return (this.img.attr('src') == 'http://og4s4svgv.bkt.clouddn.com/ascend.png' && $(tri[keyIndex]).text() > $(trj[keyIndex]).text()) ||
+				(this.img.attr('src') == 'http://og4s4svgv.bkt.clouddn.com/descend.png' && $(tri[keyIndex]).text() < $(trj[keyIndex]).text());
 	}
 	
 	$(function() { new Sorter(); });
