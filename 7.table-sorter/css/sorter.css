@@ -1,0 +1,33 @@
+.borderCollapse { border-collapse: collapse; }
+
+.sharedStyle {
+	padding: 2px 30px 2px 5px;
+	border: 0.01px solid #BFBFBF;
+	font-size: 13pt;
+	text-align: left;
+}
+
+.thStyle {
+	user-select: none;
+	position: relative;
+	background-color: #021B7F;
+	color: white;
+	font-family: Arial, "Microsoft Yahei", Serif;
+}
+
+.tdStyle {
+	color: black;
+	font-family: "Microsoft Yahei", Arial, Serif;
+}
+
+.even { background-color: #DDDDDD; }
+
+.selected {
+	background-color: #A6AFFC;
+}
+
+img {
+	position: absolute;
+	right: 0;
+	top: 5px;
+}
