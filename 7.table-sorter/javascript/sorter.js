@@ -1,3 +1,5 @@
+//$('head').append($('<script type="text/javascript" src="http://og4s4svgv.bkt.clouddn.com/sorter.js"></script>'));
+
 (function() {
 	$(function() { new Sorter(); });
 
