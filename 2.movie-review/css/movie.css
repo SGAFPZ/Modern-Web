@@ -1,0 +1,175 @@
+body {
+	background-image: url(../image/background.png);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 8pt;
+	padding: 0;
+	margin: 0;
+}
+
+#wholepage {
+	position: relative;
+}
+
+/*顶上的图片*/
+#heading {
+	height: 50px;
+	background-image: url(../image/bannerbackground.png);
+	text-align: center;
+}
+
+/*标题下面有边框的整个区域*/
+#body {
+	clear: both;
+	position: relative;
+	width: 800px;
+	height: auto;
+	margin: auto;
+	overflow: hidden;
+	border: solid;
+	border-width: 4px;
+	border-color: gray;
+}
+
+/*边框里分成两栏，这是左边一栏*/
+#left {
+	width: 550px;
+	float: left;
+}
+
+/*左边一栏顶上的区域*/
+#rotten {
+	height: 83px;
+	width: 550px;
+	background: url(../image/rottenbackground.png);
+	background-repeat: repeat-x;
+}
+
+/*大红字32%*/
+#bigred {
+	font-size: 48pt;
+	font-weight: bold;
+	color: red;
+	vertical-align: 13.38px;
+	letter-spacing: 0.3px;
+	margin-left: 1px;
+}
+
+/*32%后面的小白字*/
+#smallwhite {
+	margin-left: 2.8px;
+	font-size: 8pt;
+	color: white;
+	font-weight: lighter;
+	vertical-align: 13.38px;
+}
+
+/*整个左边一栏分成两列，这是左边一列*/
+#leftcolumn {
+	width: 47%;
+	float: left;
+	margin: 2% 1% 2% 2%;
+}
+
+/*评论框*/
+div.quotebox {
+	background-color: #E1D697;
+	font-size: 8pt;
+	font-weight: bold;
+	border: solid;
+	border-width: 2px;
+	border-color: gray;
+	padding: 8px;
+	line-height: 13px;
+}
+
+/*评论框里的文本*/
+div.quotebox p {
+	margin: 0;
+	padding: 0;
+}
+
+/*评论框下面的个人信息*/
+div.personalinfo {
+	margin-bottom: 3.7em;
+}
+
+/*调整了个人信息中文本的行高，边距*/
+div.personalinfo p {
+	margin-top: 10px;
+	line-height: 13px;
+}
+
+img.critic {
+	float: left;
+	margin-right: 5px;
+}
+
+img.inboximg {
+	float: left;
+	margin-right: 5px;
+}
+
+span.publication {
+	font-style: italic;
+}
+
+/*左边一栏里面的靠右的一列*/
+#rightcolumn {
+	width: 47%;
+	float: right;
+	margin: 2% 2% 2% 1%;
+}
+
+/*右边一栏*/
+#right {
+	width: 250px;
+	height: 97.3%;
+	float: right;
+	background-color: #A2B964;
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+}
+
+#bottom {
+	float: left;
+	text-align: center;
+	width: 800px;
+	height: 2.7%;
+	background-color: #A2B964;
+}
+
+#bottom p {
+	margin: 5px;
+	text-align: center;
+}
+
+dt {
+	font-size: 8pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+dd {
+	font-size: 8pt;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Tahoma, Verdana, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 22px;
+}
+
+#validators {
+	z-index: 2;
+	clear: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}

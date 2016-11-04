@@ -1,0 +1,119 @@
+@font-face {
+	font-family: "Berlin Sans FB Demi Bold";
+	src: url("../font/Berlin Sans FB Demi Bold.eot");
+	src: url("../font/Berlin Sans FB Demi Bold.eot?#iefix") format("embedded-opentype"),
+		 url("../font/Berlin Sans FB Demi Bold.woff") format("woff"),
+		 url("../font/Berlin Sans FB Demi Bold.ttf") format("truetype"),
+		 url("../font/Berlin Sans FB Demi Bold.svg#Berlin Sans FB Demi Bold") format("svg");
+}
+
+#container {
+	width: 248px;
+	height: 330px;
+	padding: 15px 5px 5px 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	background-color: #DCDDDD;
+	text-align: center;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-radius: 5%;
+}
+
+button {
+	cursor:default;
+	display: inline-block;
+	width: 48px;
+	height: 35px;
+	margin: 6px 0 6px 0;
+	font-weight: bold;
+	font-size: 18pt;
+	font-family: "Berlin Sans FB Demi Bold", serif;
+	text-align: center;
+	vertical-align: middle;
+	background-color: white;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-radius: 25%;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+.output_container {
+	width: 215px;
+	height: 30px;
+	text-align: right;
+	font-family: "Berlin Sans FB Demi Bold", Arial, serif;
+	border: 0px;
+	background-color: white;
+}
+
+#output_container_1 {
+	margin: 5px 0 0 1px;
+	font-size: 15pt;
+}
+
+#output_container_2 {
+	margin: 0 0 15px 1px;
+	font-size: 20pt;
+}
+
+button:hover { background-color: #EFEFEF; }
+
+#divide:hover, #multiply:hover, #plus:hover, #minus:hover { background-color: #85B1D2; }
+
+#equal:hover { background-color: #94AD47; }
+
+#delete:hover, #CE:hover { background-color: #DB846B; }
+
+button:active { background-color: gray; }
+
+#divide:active, #multiply:active, #plus:active, #minus:active { background-color: #3A80EA; }
+
+#delete:active, #CE:active { background-color: #dc4e41; }
+
+#equal:active { background-color: #80992f; }
+
+#zero { color: #AAA59C; }
+
+#one { color: #D8CCDA; }
+
+#two { color: #BC9ABD; }
+
+#three { color: #B8BAA5; }
+
+#four { color: #CAD698; }
+
+#five { color: #CDC0CF; }
+
+#six { color: #A69BBD; }
+
+#seven { color: #B09EDA; }
+
+#eight { color: #C8AAD1; }
+
+#nine { color: #C9A8C3; }
+
+#dot { color: #A4C1AF; }
+
+#bracket_l { color: #DAA5B7; }
+
+#bracket_r { color: #A1C1B4; }
+
+#divide { color: #C6A39C; }
+
+#multiply { color: #ABCABA; }
+
+#plus { color: #96D59A; }
+
+#minus { color: #AED6C3; }
+
+#delete { color: #C199DF; }
+
+#CE { color: #9BCCDB; }
+
+#equal { color: #CEC79C; }

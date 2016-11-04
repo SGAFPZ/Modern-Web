@@ -1,0 +1,198 @@
+body {
+	text-align: center;
+	font-family: Arial, Serif;
+}
+
+#top {
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+	height: 80px;
+	margin-bottom: 5px;
+}
+
+.top_text {
+	font-size: 18pt;
+	margin-bottom: 10px;
+	margin-top: 14px;
+}
+
+#outcome {
+	transition: 0.2s linear;
+}
+
+#bottom {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 120px;
+}
+
+.bottom_text {
+	font-size: 13pt;
+	text-align: left;
+}
+
+#outer_wall {
+	border: 1px solid black;
+	display: block;
+	width: 100px;
+	height: 30px;
+	margin-left: 250px;
+	margin-right: 250px;
+}
+
+
+
+
+
+#maze {
+	cursor: pointer;
+	position: relative;
+	/*border: 1px solid black;/*辅助线*/
+	width: 500px;
+	height: 304px;
+	margin-right: auto;;
+	margin-left: auto;
+}
+
+div.wall {
+	cursor: default;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.defaultColor {
+	background-color: #EEEEEE;
+}
+
+.hitColor {
+	background-color: red;
+}
+
+#wall_1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 50px;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+}
+
+#wall_2 {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 151px;
+	width: 200px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#wall_3 {
+	position: absolute;
+	top: 0;
+	left: 350px;
+	width: 150px;
+	height: 50px;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#wall_4 {
+	position: absolute;
+	top: 51px;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#wall_5 {
+	position: absolute;
+	top: 101px;
+	left: 200px;
+	width: 99px;
+	height: 151px;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#wall_6 {
+	position: absolute;
+	top: 51px;
+	left: 350px;
+	width: 149px;
+	height: 150px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#wall_7 {
+	position: absolute;
+	top: 252px;
+	left: 0;
+	width: 200px;
+	height: 50px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+#wall_8 {
+	position: absolute;
+	top: 253px;
+	left: 201px;
+	width: 100px;
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+
+#wall_9 {
+	position: absolute;
+	top: 252px;
+	left: 300px;
+	width: 200px;
+	height: 50px;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+}
+
+
+
+
+#start {
+	left: 0;
+	background-color: #89FC85;
+}
+
+#end {
+	left: 455px;
+	background-color: #8684FF;
+}
+
+#start, #end {
+	font-size: 26pt;
+	position: absolute;
+	top: 204px;
+	width: 44px;
+	height: 44px;
+	border: 1px solid black;
+}
+
+#start p, #end p {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+.hide {
+	opacity: 0;
+}

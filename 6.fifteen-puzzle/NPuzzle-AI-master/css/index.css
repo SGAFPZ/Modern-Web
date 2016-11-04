@@ -1,0 +1,194 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Microsoft YaHei';
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+/*
+Background style
+*/
+body.lightBackground {
+	background-color: white;
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-o-transition:  all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+}
+
+body.darkBackground {
+	background-color: black;
+	-moz-transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-o-transition:  all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+}
+
+/*
+Winning message style
+*/
+@-webkit-keyframes 'Blur' {
+	0% {
+		-webkit-filter: blur(0px);
+	}
+	100% {
+		-webkit-filter: blur(5px);
+	}
+}
+
+@-webkit-keyframes 'CancelBlur' {
+	0% {
+		-webkit-filter: blur(5px);
+	}
+	100% {
+		-webkit-filter: blur(0px);
+	}
+}
+
+@-webkit-keyframes 'ShowWinMsg' {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+div.blur {
+	-webkit-animation-name: 'Blur';
+	-webkit-animation-duration: 0.2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-filter: blur(5px);
+}
+
+div.noBlur {
+	-webkit-animation-name: 'CancelBlur';
+	-webkit-animation-duration: 0.2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-filter: blur(0px);
+}
+
+div.winMsgDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+}
+
+div.winMsgDiv p {
+	margin-top: 200px;
+	opacity: 1;
+	font-size: 100px;
+    color: red;
+    text-align: center;
+	-webkit-animation-name: 'ShowWinMsg';
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+}
+
+/*
+Main
+*/
+div#mainContainer {
+	width: 410px;
+	margin: auto;
+}
+
+/*
+Image area style
+*/
+div#imgContainer {
+	height: 410px;
+	margin: auto;
+	margin-top: 100px;
+	position: relative;
+	overflow: hidden;
+}
+
+div.puzzleBlock {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	-moz-transition: all 0.15s linear;
+	-webkit-transition: all 0.15s linear;
+	-o-transition:  all 0.15s linear;
+	-ms-transition: all 0.15s linear;
+}
+
+div.puzzleBlock:hover {
+	-moz-transform: scale(1.10, 1.10);
+	-webkit-transform: scale(1.10, 1.10);
+	-o-transform: scale(1.10, 1.10));
+	-ms-transform: scale(1.10, 1.10);
+}
+
+img.puzzleImg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+/*
+Control button style
+*/
+div#btnContainer {
+	height: 50px;
+	margin: auto;
+	margin-top: 30px;
+	position: relative;
+}
+
+button#switchBtn {
+	left: 85px;
+	top: 0px;
+}
+
+button#cheatBtn {
+	right: 87px;
+	top: 0px;
+}
+
+button#mixBtn {;
+	left: 176px;
+	top: 0px;
+}
+
+button.btnCommon {
+	position: absolute;
+	display: block;
+	outline: none;
+	width: 55px;
+	height: 55px;
+	background: #4a86e8;
+	color: white;
+	border-radius: 50%;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	background: -webkit-linear-gradient(top, #656565, #4c4c4c);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#656565), to(#4a4a4a));
+	background: -moz-linear-gradient(top, #656565, #4a4a4a);
+	background: -o-linear-gradient(top, #656565, #4a4a4a);
+	background: -ms-linear-gradient(top, #656565, #4a4a4a);
+	background: linear-gradient(top, #656565, #4a4a4a);
+}
+
+button.btnCommon:active {
+	padding-top: 2px;
+	padding-left: 2px;
+}
+
+button.btnCommon:hover {
+	background: -webkit-linear-gradient(top, #818181, #575757);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#818181), to(#575757));
+	background: -moz-linear-gradient(top, #818181, #575757);
+	background: -o-linear-gradient(top, #818181, #575757);
+	background: linear-gradient(top, #818181, #575757);
+	background: -ms-linear-gradient(top, #818181, #575757);
+}
