@@ -55,6 +55,6 @@
     //loading ...
     Loader.load([
             'http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js', 
-            'http://og4s4svgv.bkt.clouddn.com/sorter1.0.js',
+            'http://og4s4svgv.bkt.clouddn.com/sorter1.3.js',
              ]);
 })();

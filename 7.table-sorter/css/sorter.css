@@ -29,7 +29,8 @@
 	background-color: #A6AFFC;
 }
 
-img {
+#triangle {
+	margin: 0!important;
 	position: absolute;
 	right: 0;
 	top: 5px;

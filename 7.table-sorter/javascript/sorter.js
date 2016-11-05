@@ -8,7 +8,7 @@
 	var sorterP = Sorter.prototype;
 
 	sorterP.setStyle = function() {
-		$('head').append('<link rel="stylesheet" type="text/css" href="http://og4s4svgv.bkt.clouddn.com/sorter1.0.css" />');
+		$('head').append('<link rel="stylesheet" type="text/css" href="http://og4s4svgv.bkt.clouddn.com/sorter1.3.css" />');
 		this.th.addClass('sharedStyle thStyle');
 		$('tr:even').addClass('even');
 		$('tr:odd').addClass('odd');
