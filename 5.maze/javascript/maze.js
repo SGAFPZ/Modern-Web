@@ -10,7 +10,9 @@ function hit_wall(outcome, itself, condition) {
 function wall_sets(outcome, condition) {
 	var walls = document.getElementsByClassName('wall');
 	for (var i = 0; i < walls.length-1; i++) {
-		walls[i].addEventListener('mouseover', function() { hit_wall(outcome, this, condition); });
+		walls[i].addEventListener('mouseover', function() {
+			hit_wall(outcome, this, condition);
+		});
 	}
 }
 
@@ -20,18 +22,24 @@ window.onload = function() {
 	var walls = document.getElementsByClassName('wall');
 	var maze = document.getElementById('maze');
 	outcome.style.opacity = "0";
+
 	document.getElementById('start').onmouseover = function() {
 		outcome.style.opacity = "0";
 		condition.value = 0;
-		for (var i = 0; i < 9; i++) 
-		walls[i].style.backgroundColor = '#EEEEEE';
+		for (var i = 0; i < 9; i++) {
+			walls[i].style.backgroundColor = '#EEEEEE';
+		}
 	}
+
 	maze.onmouseleave = function() {
 		condition.value = 1;
-		for (var i = 0; i < 9; i++) 
-		walls[i].style.backgroundColor = '#EEEEEE';
+		for (var i = 0; i < 9; i++) {
+			walls[i].style.backgroundColor = '#EEEEEE';
+		}
 	}
+
 	wall_sets(outcome, condition);
+
 	document.getElementById('end').onmouseover = function() {
 		if (condition.value == 0 && outcome.style.opacity == "0") {
 			outcome.style.opacity = "1";
@@ -41,4 +49,5 @@ window.onload = function() {
 			outcome.textContent = "Don't cheat,you should start from the 'S' and move to the 'E' inside the maze!";
 		}
 	}
+
 }

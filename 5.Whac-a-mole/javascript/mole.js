@@ -6,7 +6,9 @@ function start_timing(time, variables) {
 		stop_sets(variables);
 		return;
 	}
-	variables.key = setTimeout(function() { start_timing(time, variables); }, 1000);
+	variables.key = setTimeout(function() {
+		start_timing(time, variables);
+	}, 1000);
 }
 
 function set_holes(variables) {
@@ -16,7 +18,9 @@ function set_holes(variables) {
 		new_hole.type = "radio";
 		new_hole.className = "hole";
 		new_hole.name = i+"";
-		new_hole.addEventListener('click', function() { check(this, variables); });
+		new_hole.addEventListener('click', function() {
+			check(this, variables);
+		});
 		hole_area.appendChild(new_hole);
 	}
 }
@@ -62,9 +66,10 @@ function stop_timing(variables) {
 }
 
 window.onload = function() {
-	var variables = {key: null, selected: 0, score: 0, time: 0};
+	var variables = { key: null, selected: 0, score: 0, time: 0, isOver: true };
 	set_holes(variables);
 	var controller = document.getElementById('controller');
+
 	controller.onclick = function() {
 		var condition = document.getElementById('condition');
 		var time = document.getElementById('time');
@@ -77,4 +82,3 @@ window.onload = function() {
 		}
 	}
 }
-

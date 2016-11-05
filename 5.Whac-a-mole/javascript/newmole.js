@@ -2,9 +2,6 @@
 	$(function() { new Mole(); });
 
 	var Mole = function() {
-		this.scoreDiv = $('#score');
-		this.timeDiv = $('#time');
-		this.conditionDiv = $('#condition');
 		this.setInfo();
 		this.createHoles();
 		this.addControllerListener();
@@ -13,56 +10,50 @@
 	var p = Mole.prototype;
 
 	p.setInfo = function() {
-		this.timeKey = null; this.score = 0; this.time = 30; this.isOver = true; this.selected = 0;
+		$(this).attr({ timeKey: null, score: 0, time: 30, isOver: true, selected: 0,
+					scoreDiv: $('#score'), timeDiv: $('#time'), conditionDiv: $('#condition') });
 	}
 
 	p.createHoles = function() {
 		this.holes = [];
-		this.hole_area = $('#hole_area');
 		for(var i = 0; i < 60; i++) {
-			var new_hole = document.createElement('input');
+			var new_hole = $('<input/>');
 			this.setNewHole(new_hole, i);
 			this.holes.push(new_hole);
 		}
-		this.hole_area.append(this.holes);
+		$('#hole_area').append(this.holes);
 	};
 
-	p.setNewHole = function(new_hole, i) {
+	p.setNewHole = function(hole, i) {
 		var that = this;
-		new_hole.type = "radio";
-		new_hole.className = "hole";
-		new_hole.name = i;
-		new_hole.addEventListener('click', function() { that.check(this); });
+		hole.attr({ type: "radio", name: i }).addClass('hole').click(function() { that.check(hole); });
 	};
 
 	p.check = function(hole) {
-		hole.checked = false;
-		if (!this.isOver && this.isSelected(hole)) {
-			this.randomSelect();
-			this.score++;
-		} else if (!this.isOver && !this.isSelected(hole)) {
-			this.score--;
+		hole.prop('checked', false);
+		if (!this.isOver) {
+			if (this.isSelected(hole)) { this.randomSelect(); this.score++; }
+			else { this.score--; }
 		}
 		this.refreshScore();
 	};
 
 	p.addControllerListener = function() {
 		var that = this;
-		this.controller = $('#controller');
-		this.controller.click(function() {
+		$('#controller').click(function() {
 			if (that.isOver === true) that.start();
 			else that.over();
 		});
 	};
 
 	p.isSelected = function(hole) {
-		if (hole.name == this.selected) return true;
+		if (parseInt(hole.attr('name')) == this.selected) return true;
 		return false;
 	};
 
 	p.randomSelect = function() {
 		this.selected = Math.floor(Math.random()*60);
-		this.holes[this.selected].checked = true;
+		this.holes[this.selected].prop('checked', true);
 	};
 
 	p.refreshScore = function() { this.scoreDiv.text(this.score); };
@@ -72,21 +63,16 @@
 	p.refreshCondition = function() { this.conditionDiv.text(this.ConditionToString()); };
 
 	p.start = function() {
-		this.score = 0;
-		this.time = 30;
-		this.isOver = false;
-		this.refreshScore();
-		this.refreshCondition();
+		this.score = 0; this.refreshScore();
+		this.isOver = false; this.refreshCondition();
+		this.time = 30; this.startTiming();
 		this.randomSelect();
-		this.startTiming();
 	};
 
 	p.over = function() {
-		this.time = 0;
-		this.isOver = true;
-		this.holes[this.selected].checked = false;
-		this.refreshCondition();
-		this.refreshTime();
+		this.time = 0; this.refreshTime();
+		this.isOver = true; this.refreshCondition();
+		this.holes[this.selected].prop('checked', false);
 		this.stopTiming();
 		alert("Game Over.\nYour score is: " + this.score);
 	};
@@ -95,7 +81,7 @@
 		var that = this;
 		this.refreshTime();
 		this.time--;
-		if (this.time == -1) { this.over(); }
+		if (this.time == -1) { this.over(); return; }
 		this.timeKey = setTimeout(function() { that.startTiming(); }, 1000);
 	};
 
