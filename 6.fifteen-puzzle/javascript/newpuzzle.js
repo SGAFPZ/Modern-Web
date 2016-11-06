@@ -41,7 +41,7 @@
 		newPuzzle.addClass(function() { return "p"+(i*4+j)+" puzzle"+" row"+i+" col"+j+" background0"; });
 		newPuzzle.attr({ row: i, col: j, name: i*4+j, id: String.fromCharCode(65+i*4+j) });
 		if (i == 3 && j == 3) this.hiddenPiece = newPuzzle;
-		else newPuzzle.click(function() { that.clickPuzzle($(this)); })
+		else newPuzzle.click(function() { that.clickPuzzle($(this)); });
 	};
 
 	p.changePicture = function() {
@@ -85,14 +85,14 @@
 	p.canMove = function(puzzle) {
 		return ((puzzle.attr('col') == this.hiddenPiece.attr('col') && Math.abs(puzzle.attr('row')-this.hiddenPiece.attr('row')) == 1) ||
 				(puzzle.attr('row') == this.hiddenPiece.attr('row') && Math.abs(puzzle.attr('col')-this.hiddenPiece.attr('col')) == 1)) &&
-				(this.isOver == false);
+				(this.isOver === false);
 	};
 
 	p.move = function(puzzle) {
 		var that = this;
 		puzzle.removeClass(function() { return "row"+puzzle.attr('row')+" col"+puzzle.attr('col'); });
 		puzzle.addClass(function() { return "row"+that.hiddenPiece.attr('row')+" col"+that.hiddenPiece.attr('col'); });
-		this.hiddenPiece.removeClass(function() { return "row"+puzzle.attr('row')+" col"+puzzle.attr('col'); })
+		this.hiddenPiece.removeClass(function() { return "row"+puzzle.attr('row')+" col"+puzzle.attr('col'); });
 		this.hiddenPiece.addClass(function() { return "row"+puzzle.attr('row')+" col"+puzzle.attr('col'); });
 		var temp = puzzle.attr('col'); puzzle.attr('col', this.hiddenPiece.attr('col')); this.hiddenPiece.attr('col', temp);
 		temp = puzzle.attr('row'); puzzle.attr('row', this.hiddenPiece.attr('row')); this.hiddenPiece.attr('row', temp);
@@ -115,7 +115,7 @@
 				return;
 		}
 		this.win();
-	}
+	};
 
 	p.win = function() {
 		setTimeout(function() { $('#P').removeClass('hidden'); }, 200);

@@ -12,7 +12,7 @@
 	p.setInfo = function() {
 		$(this).attr({ timeKey: null, score: 0, time: 30, isOver: true, selected: 0,
 					scoreDiv: $('#score'), timeDiv: $('#time'), conditionDiv: $('#condition') });
-	}
+	};
 
 	p.createHoles = function() {
 		this.holes = [];

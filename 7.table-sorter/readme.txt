@@ -4,15 +4,12 @@ $('head').append('<script type="text/javascript" src="http://og4s4svgv.bkt.cloud
 url:
 http://tool.oschina.net/commons?type=4
 http://www.runoob.com/regexp/regexp-syntax.html
-
-
+http://www.fifa.com/fifa-world-ranking/index.html
+http://soj.sysu.edu.cn/courses.php
+http://www.phbang.cn/general/147871.html
+http://us.battle.net/heroes/en/leaderboards/hero/2/americas
 
 PS:
-
-url for 'sorter.js': http://og4s4svgv.bkt.clouddn.com/sorter1.3.js
-url for 'loader.js': http://og4s4svgv.bkt.clouddn.com/loader1.3.js
-url for 'sorter.css': http://og4s4svgv.bkt.clouddn.com/sorter1.3.css
-
 
 First:  the file called 'loader.js' in javascript/ can be used when JQuery isn't loaded, but it needs several lines.
 
