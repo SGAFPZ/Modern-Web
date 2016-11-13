@@ -25,7 +25,7 @@ h1 {
 	left: 50px;
 	line-height: 40px;
 	padding: 0 10px 0 10px;
-	width: 320px;
+	width: 350px;
 	color: #F4452E;
 	background-color: white;
 	border: none;
@@ -42,7 +42,7 @@ h1 {
 
 #hint {
 	position: absolute;
-	left: 50px;
-	top: 250px;
+	left: 30px;
+	top: 400px;
 	color: white;
 }
