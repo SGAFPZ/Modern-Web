@@ -29,9 +29,9 @@ input { outline:none; }
 
 #UsernameCheck, #IDCheck, #PhoneCheck, #EmailCheck {
 	position: absolute;
-	text-align: right;
-	left: -85px;
-	width: 120px;
+	text-align: left;
+	left: 305px;
+	width: 400px;
 	height: 40px;
 	padding-top: 10px;
 	padding-left: 10px;

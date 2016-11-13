@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; }
+
+body {
+	background-color: #272125;
+	font-family: "Microsoft Yahei", Arial, serif;
+}
+
+h1 {
+	position: absolute;
+	left: 50px;
+	font-size: 18pt;
+	color: white;
+}
+
+
+#messageContainer {
+	position: relative;
+	margin: 100px auto 0 auto;
+	width: 400px;
+	height: 300px;
+}
+
+.message {
+	position: absolute;
+	left: 50px;
+	line-height: 40px;
+	padding: 0 10px 0 10px;
+	width: 320px;
+	color: #F4452E;
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+}
+
+#m1 { top: 50px; }
+
+#m2 { top: 100px; }
+
+#m3 { top: 150px; }
+
+#m4 { top: 200px; }

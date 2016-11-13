@@ -130,7 +130,11 @@ var showMessage = function(response, message) {
 					"</head>"+
 					"<body>"+
 						"<div id=\"messageContainer\">"+
-							message.join('\r\n')+
+							"<h1>Error</h1>"+
+							"<div class=\"message\" id=\"m1\">"+(message[0] || "")+"</div>"+
+							"<div class=\"message\" id=\"m2\">"+(message[1] || "")+"</div>"+
+							"<div class=\"message\" id=\"m3\">"+(message[2] || "")+"</div>"+
+							"<div class=\"message\" id=\"m4\">"+(message[3] || "")+"</div>"+
 						"</div>"+
 					"</body>"+
 				"</html>";
