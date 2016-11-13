@@ -125,7 +125,7 @@ var showMessage = function(response, message) {
 				"<html>"+
 					"<head>"+
 						"<title>Message</title>"+
-						"<meta charset=\"utf-8\">"+
+						"<meta charset=\"utf-8\" http-equiv=\"Refresh\" content=\"6;url=/\">"+
 						"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/message.css\">"+
 					"</head>"+
 					"<body>"+
@@ -135,6 +135,7 @@ var showMessage = function(response, message) {
 							"<div class=\"message\" id=\"m2\">"+(message[1] || "")+"</div>"+
 							"<div class=\"message\" id=\"m3\">"+(message[2] || "")+"</div>"+
 							"<div class=\"message\" id=\"m4\">"+(message[3] || "")+"</div>"+
+							"<div id=\"hint\">It will turn back to the register page after 6 seconds</div>"+
 						"</div>"+
 					"</body>"+
 				"</html>";

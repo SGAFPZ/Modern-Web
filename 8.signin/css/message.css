@@ -16,7 +16,7 @@ h1 {
 #messageContainer {
 	position: relative;
 	margin: 100px auto 0 auto;
-	width: 400px;
+	width: 450px;
 	height: 300px;
 }
 
@@ -39,3 +39,10 @@ h1 {
 #m3 { top: 150px; }
 
 #m4 { top: 200px; }
+
+#hint {
+	position: absolute;
+	left: 50px;
+	top: 250px;
+	color: white;
+}
