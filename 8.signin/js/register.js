@@ -11,16 +11,29 @@
 	var p = Register.prototype;
 
 	p.listenInputFocous = function() {
+		var that = this;
 		this.input.focus(function() {
 			var input = $(this);
+			that.showFormatMessage(input.attr('name'));
 			if (input.prop('value') == input.attr('name')) input.prop('value', '');
 		});
 	};
 
 	p.listenInputBlur = function() {
 		var that = this;
-		this.input.blur(function() { that.check($(this)); });
+		this.input.blur(function() { that.check($(this)); $('#formatMessage').text(''); });
 	};
+
+	p.showFormatMessage = function(name) {
+		if (name == 'Username')
+			$('#formatMessage').text('Username: 6-18 digits, letters or underline, start with a letter');
+		else if (name == 'ID')
+			$('#formatMessage').text('ID: 8 digits, can\'t start with ZERO');
+		else if (name == 'Phone')
+			$('#formatMessage').text('Phone: 11 digits, can\'t start with ZERO');
+		else 
+			$('#formatMessage').text('Email: your email address');
+	}
 
 	p.check = function(input) {
 		var name = input.attr('name');
@@ -28,7 +41,7 @@
 		if (value == "") {
 			input.prop('value', name);
 		} else {
-			var result = this.checkValidation(input);
+			var result = this.checkValidity(input);
 			if (result.isValid) this.showPass(name);
 			else this.showError(name, result.wrongMessage);
 		}
@@ -53,7 +66,7 @@
 		return flag;
 	};
 
-	p.checkValidation = function(input) {
+	p.checkValidity = function(input) {
 		var inputValue = input.prop('value');
 		var result = { isValid: true, wrongMessage: "" };
 		if (input.attr('name') == 'Username') {
@@ -91,7 +104,7 @@
 			if (!result.isValid)
 				if (/^.*[^a-zA-Z0-9_@\-\.].*$/.test(inputValue))
 					result.wrongMessage = "Email contains only 'a-z','A-Z','0-9','_','-' and '@'";
-				else result.wrongMessage = "Please enter right Email addres";
+				else result.wrongMessage = "Please enter right Email address";
 		}
 		return result;
 	};

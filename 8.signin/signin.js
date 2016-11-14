@@ -43,11 +43,15 @@
 			else returnFile(response, '/html/register.html');
 		} else {
 			if (path == '/') path = '/html/register.html';
+			if (path == '/favicon.ico') path = '/img/favicon.jpg';
 			if (path == '/login') {
 				dealWithInfo(response, info);
+			} else if (path.search(/(register|jquery|info|message|favicon)/) != -1) {
+				returnFile(response, '.'+path);
 			} else {
-				if (path.search(/(register|jquery|info|message)/) != -1)
-					returnFile(response, path);
+				response.writeHead(404, {"Content-Type": "text/plain"});
+				response.write('Page not found');
+				response.end();
 			}
 		}
 	};
@@ -81,15 +85,16 @@
 	}
 
 	var returnFile = function(response, path) {
-		path = '.'+path;
 		var postfix = path.substr(path.lastIndexOf('.')+1, path.length);
-		if (postfix == 'js') var contentType = "application/x-javascript";
-		else var contentType = "text/"+postfix;
+		if (postfix == 'js') { var contentType = "application/x-javascript"; var format = 'utf8'; }
+		else if (postfix == 'jpg') { var contentType = "application/x-jpg"; var format = 'binary'; }
+		else { var contentType = "text/"+postfix; var format = 'utf8'; }
 		console.log('load file: ', path);
-		fs.readFile(path, 'utf8', (err, data) => {
-			if (err) response.end();
+		fs.readFile(path, format, (err, data) => {
+			if (err) throw err;
 			response.writeHead(200, { "Content-Type": contentType });
-			response.write(data.toString());
+			if (postfix == 'jpg') response.write(data, 'binary');
+			else response.write(data.toString());
 			response.end();
 		});
 	}
@@ -128,7 +133,7 @@
 					"<html>"+
 						"<head>"+
 							"<title>Message</title>"+
-							"<meta charset=\"utf-8\" http-equiv=\"Refresh\" content=\"6;url=/\">"+
+							"<meta charset=\"utf-8\" http-equiv=\"Refresh\" content=\"10;url=/\">"+
 							"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/message.css\">"+
 						"</head>"+
 						"<body>"+
@@ -138,7 +143,7 @@
 								"<div class=\"message\" id=\"m2\">"+(message[1] || "")+"</div>"+
 								"<div class=\"message\" id=\"m3\">"+(message[2] || "")+"</div>"+
 								"<div class=\"message\" id=\"m4\">"+(message[3] || "")+"</div>"+
-								"<div id=\"hint\">It will turn back to the register page after 6 seconds</div>"+
+								"<div id=\"hint\">It will turn back to the register page after 10 seconds</div>"+
 							"</div>"+
 						"</body>"+
 					"</html>";

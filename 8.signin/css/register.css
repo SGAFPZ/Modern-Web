@@ -10,14 +10,21 @@ input { outline:none; }
 #formContainer {
 	position: relative;
 	margin: 100px auto 0 auto;
-	width: 350px;
+	width: 500px;
 	height: 400px;
 	background-color: #272125;
 }
 
+#formatMessage {
+	position: relative;
+	top: 20px;
+	color: white;
+	text-align: center;
+}
+
 #Username, #ID, #Phone, #Email {
 	position: absolute;
-	left: 50px;
+	left: 125px;
 	width: 250px;
 	height: 40px;
 	padding-left: 10px;
@@ -30,7 +37,7 @@ input { outline:none; }
 #UsernameCheck, #IDCheck, #PhoneCheck, #EmailCheck {
 	position: absolute;
 	text-align: left;
-	left: 305px;
+	left: 380px;
 	width: 400px;
 	height: 40px;
 	padding-top: 10px;
@@ -58,7 +65,7 @@ input { outline:none; }
 }
 
 #reset {
-	left: 230px;
+	left: 305px;
 	top: 250px;
 	width: 80px;
 	height: 40px;
@@ -66,7 +73,7 @@ input { outline:none; }
 }
 
 #register {
-	left: 50px;
+	left: 125px;
 	top: 250px;
 	width: 170px;
 	height: 40px;
