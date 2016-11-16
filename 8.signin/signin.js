@@ -1,4 +1,4 @@
-(function() {
+
 	var http = require('http');
 	var fs = require('fs');
 	var url = require('url');
@@ -24,11 +24,11 @@
 	};
 
 	var createServer = function() {
-		http.createServer(recieveRequest).listen(8000);
+		http.createServer(receiveRequest).listen(8000);
 		console.log("Server is running at 127.0.0.1:8000");
 	};
 
-	var recieveRequest = function(request, response) {
+	var receiveRequest = function(request, response) {
 		var info = "";
 		request.on("data", (data) => { info += data; });
 		request.on("end", () => { dealWithRequest(info, request, response); });
@@ -40,7 +40,7 @@
 		if (url.parse(request.url).search && path == '/') {
 			var index = indexOfDatabase(query);
 			if (index != undefined) showInfo(response, index);
-			else returnFile(response, '/html/register.html');
+			else returnFile(response, './html/register.html');
 		} else {
 			if (path == '/') path = '/html/register.html';
 			if (path == '/favicon.ico') path = '/img/favicon.jpg';
@@ -152,4 +152,4 @@
 	};
 
 	startServer();
-})();
+
