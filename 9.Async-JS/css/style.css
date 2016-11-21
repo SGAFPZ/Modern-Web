@@ -1,0 +1,164 @@
+* { padding: 0; margin: 0; }
+
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	font-family: "Microsoft Yahei", Verdana, sans-serif;
+}
+
+#at-plus-container {
+	position: relative;
+	height: 100%;
+	width: 180px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#bottom-positioner {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#button {
+	position: static;
+	width: 26px;
+	height: 26px;
+	margin: 97px 77px;
+}
+
+#button:hover {
+	height: 255px;
+	width: 180px;
+	margin: 24px 0;
+}
+
+
+#info-bar {
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	color: #36DA9E;
+	font-size: 20pt;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 130px;
+	overflow: hidden;
+	transition: all 0.5s 0.5s ease-in;
+}
+
+#button:hover #info-bar {
+	opacity: 1;
+	width: 130px;
+	height: 130px;
+	bottom: 150px;
+	left: 25px;
+	line-height: 130px;
+	transition: all 0.5s 0.5s ease-in;
+}
+
+#control-ring-container {
+	height: 26px;
+	width: 26px;
+	position: absolute;
+	bottom: 97px;
+	left: 77px;
+	border-radius: 50%;
+}
+
+li {
+	opacity: 0;
+	list-style: none;
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-size: 18px 18px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 32px;
+	color: #36DA9E;
+	transition: all 0.5s 0.5s ease-in, background-color 0.5s 0s ease-in;
+	
+}
+
+#button:hover li {
+	opacity: 1;
+}
+
+#button:hover li:nth-child(1) {
+	margin-top: -40px;
+	margin-left: -66px;
+}
+
+#button:hover li:nth-child(2) {
+	margin-top: 2px;
+	margin-left: -76px;
+}
+
+#button:hover li:nth-child(3) {
+	margin-top: 43px;
+	margin-left: -60px;
+}
+
+#button:hover li:nth-child(4) {
+	margin-top: 66px;
+	margin-left: -22px;
+}
+
+#button:hover li:nth-child(5) {
+	margin-top: 60px;
+	margin-left: 23px;
+}
+
+.number {
+	position: absolute;
+	top: -2px;
+	right: -10px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #FF3A31;
+	text-align: center;
+	line-height: 20px;
+	color: #E0D6DC;
+	box-sizing: border-box;
+	transition: all 0.5s 0.5s ease-in, background-color 0.5s 0s ease-in, opacity 0.5s 0s ease-in;
+}
+
+#button .apb {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	bottom: 97px;
+	left: 77px;
+	border-radius: 50%;
+	background: url(../img/atplus_white.png) center no-repeat;
+	background-size: 20px 15px;
+	background-color: #989FCF;
+	transition: all 0.2s 1s linear;
+}
+
+#button:hover .apb {
+	width: 50px;
+	height: 50px;
+	bottom: 85px;
+	left: 65px;
+	background: url(../img/atplus_green.png) center no-repeat;
+	background-size: 40px 30px;
+	background-color: #303F9F;
+	transition: all 0.5s 0.5s ease-in;
+}
+
+.inactivated { background-color: #676767; cursor: default; }
+
+.activated { background-color: #264798; cursor: pointer; }
+
+.hidden { opacity: 0; }
