@@ -24,10 +24,10 @@
 		$('#button').hover(() => {
 			$('li').removeClass('inactivated').addClass('activated');  // 用toggleClass的话连续点两次会出错，下同
 			$('#info-bar').text('');
-			$('p').remove();
 		}, () => {
 			$('li').add('#info-bar').removeClass('activated').addClass('inactivated');
 			$('li span').addClass('hidden');
+			$('p').remove();
 			this.abortAllRequests();
 			this.getRandomOrder();
 			this.current = 0;
