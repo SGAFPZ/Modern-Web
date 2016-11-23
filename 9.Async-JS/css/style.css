@@ -134,6 +134,7 @@ li {
 }
 
 #button .apb {
+	z-index: 2;
 	position: absolute;
 	width: 26px;
 	height: 26px;
@@ -145,6 +146,8 @@ li {
 	background-color: #989FCF;
 	transition: all 0.2s 1s linear;
 }
+
+.apb, .icon { cursor: pointer; }
 
 #button:hover .apb {
 	width: 50px;
@@ -162,3 +165,20 @@ li {
 .activated { background-color: #264798; cursor: pointer; }
 
 .hidden { opacity: 0; }
+
+#order {
+	width: 120px;
+	height: 20px;
+	position: absolute;
+	bottom: 330px;
+	left: 30px;
+}
+
+#message {
+	width: 200px;
+	height: 250px;
+	position: absolute;
+	bottom: 400px;
+	left: 0px;
+	border: 1px black solid;
+}

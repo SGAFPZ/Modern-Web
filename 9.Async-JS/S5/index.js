@@ -3,11 +3,43 @@
 	$(function() { new AsyncCalculator() });
 
 	var AsyncCalculator = function() {
+		this.order = ['#A', '#B', '#C', '#D', '#E', '#info-bar'];
+		this.current = 0;
+		this.requests = [];
+		this.getRandomOrder();
 		this.listenAtHover();
-		this.listenButtonClick();
+		this.listenButton();
 	};
 
 	var p = AsyncCalculator.prototype;
+
+	p.aHandler = function(err, currentSum, callback) {
+		if (err) {
+			$('#message').text(err.message);
+			callback(null, err.currentSum, this[this.order[this.current+1]+'Handler']);
+		} else {
+			this.disableButtonsExcept($('#A'));
+			$('#A span').removeClass('hidden').text("...");
+			var request = $.post('getNumber', function(data) {
+				$('#A span').text(data);
+				currentSum += parseInt(data);
+				$('#A').removeClass('activated').addClass('inactivated');
+				that.enableButtonsUnclicked();
+				callback(null, currentSum, )
+			}).fail(function() {
+				console.log('fail');
+				that.getNumber(clickedButton);
+			});
+			this.requests.push(request);
+		}
+	};
+
+	p.getRandomOrder = function() {
+		this.order.pop();
+		this.order.sort(function(){ return 0.5 - Math.random(); });
+		$('#order').text(this.order.join());
+		this.order.push('#info-bar');
+	};
 
 	p.listenAtHover = function() {
 		$('#button').hover(() => {
@@ -16,12 +48,23 @@
 		}, () => {
 			$('li').add('#info-bar').removeClass('activated').addClass('inactivated');
 			$('li span').addClass('hidden');
+			this.abortAllRequests();
+			this.getRandomOrder();
+			this.current = 0;
 		});
 	};
 
-	p.listenButtonClick = function() {
+	p.abortAllRequests = function() {
+		this.requests.forEach(function(request) {
+			if (request != null) request.abort();
+			request = null;
+		});
+	}
+
+	p.listenButton = function() {
 		var that = this;
-		$('li').click(function() { that.getNumber($(this)); });
+		$('.apb').click(function() { if (that.current == 0) that.autoClick(); });
+		$('li').click(function() { that.getNumber($(this)); }).on('done', function() { that.autoClick(); });
 		$('#info-bar').click(function() { that.calculate(); });
 	};
 
@@ -30,15 +73,17 @@
 		if (this.isEnabled(clickedButton)) {
 			this.disableButtonsExcept(clickedButton);
 			$('#'+clickedButton.attr('id')+' span').removeClass('hidden').text("...");
-			$.post('getNumber', function(data) {
+			var request = $.post('getNumber', function(data) {
 				$('#'+clickedButton.attr('id')+' span').text(data);
 				clickedButton.removeClass('activated').addClass('inactivated');
 				that.enableButtonsUnclicked();
 				that.isEachButtonClicked();
+				clickedButton.trigger('done');
 			}).fail(function() {
 				console.log('fail');
 				that.getNumber(clickedButton);
 			});
+			this.requests.push(request);
 		}
 	};
 
@@ -73,6 +118,11 @@
 			});
 			$('#info-bar').text(''+sum).removeClass('activated').addClass('inactivated');
 		}
+	};
+
+	p.autoClick = function() {
+		$(this.order[this.current]).trigger('click');
+		this.current++;
 	};
 
 })();
