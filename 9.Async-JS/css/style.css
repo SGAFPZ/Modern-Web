@@ -175,10 +175,10 @@ li {
 }
 
 #message {
-	width: 200px;
-	height: 250px;
+	width: 350px;
+	height: 100%;
 	position: absolute;
-	bottom: 400px;
-	left: 0px;
+	bottom: 0;
+	left: -400px;
 	border: 1px black solid;
 }
