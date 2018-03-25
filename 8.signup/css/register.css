@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #272125;
+	font-family: "Microsoft Yahei", Arial, serif;
+}
+
+input { outline:none; }
+
+#formContainer {
+	position: relative;
+	margin: 100px auto 0 auto;
+	width: 500px;
+	height: 400px;
+	background-color: #272125;
+}
+
+#formatMessage {
+	position: relative;
+	top: 20px;
+	color: white;
+	text-align: center;
+}
+
+#Username, #ID, #Phone, #Email {
+	position: absolute;
+	left: 125px;
+	width: 250px;
+	height: 40px;
+	padding-left: 10px;
+	color: white;
+	background-color: #857A81;
+	border: none;
+	border-radius: 10px;
+}
+
+#UsernameCheck, #IDCheck, #PhoneCheck, #EmailCheck {
+	position: absolute;
+	text-align: left;
+	left: 380px;
+	width: 400px;
+	height: 40px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.right { color: #00CA56; }
+
+.wrong { color: #F4452E; }
+
+#Username, #UsernameCheck { top: 50px; }
+
+#ID, #IDCheck { top: 100px; }
+
+#Phone, #PhoneCheck { top: 150px; }
+
+#Email, #EmailCheck { top: 200px; }
+
+#register, #reset {
+	font-size: 12pt;
+	color: white;
+	position: absolute;
+	border: none;
+	border-radius: 5px;
+}
+
+#reset {
+	left: 305px;
+	top: 250px;
+	width: 80px;
+	height: 40px;
+	background-color: #F4452E;
+}
+
+#register {
+	left: 125px;
+	top: 250px;
+	width: 170px;
+	height: 40px;
+	background-color: #00CA56;
+}
+
+#Username:focus, #ID:focus, #Phone:focus, #Email:focus {
+	color: #272125;
+	background-color: white!important;
+}
+
+#Username:hover, #ID:hover, #Phone:hover, #Email:hover {
+	background-color: #B5ABB1;
+}
+
+#reset:hover { background-color: #F95C4A; }
+
+#reset:active { background-color: #F4452E; }
+
+#register:hover { background-color: #21D36B; }
+
+#register:active { background-color: #00CA56; }
